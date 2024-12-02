@@ -1,4 +1,5 @@
 import pygame
+import Sprites
 
 WIDTH = 1000
 HEIGHT = 800
@@ -15,8 +16,8 @@ player = Sprites.Player(
 )
 sprites.add(player)
 
-scores_sprites.add(*scores)
-sprites.add(*scores)
+#scores_sprites.add(*scores)
+#sprites.add(*scores)
 
 while running:
     clock.tick(20)
