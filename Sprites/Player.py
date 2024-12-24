@@ -1,4 +1,6 @@
 import pygame
+from pygame import sprite
+
 import ai_logic
 from Sprites.AnimationSprite import AnimationSprite
 
@@ -13,34 +15,36 @@ def can_move(player, map_group):
 
 
 images = {
-    "falling": ([
-                    "assets/jump.png",
-                    "assets/right.png",
-                    "assets/left.png"
-                ], 5),
+    'right': (["assets/right.png"], 5),
+    'left': (["assets/left.png", "assets/left.png"], 5),
     "normal": (["assets/boy.png"], 0)
 }
 
 
-#поменять картинки
+# поменять картинки
 
 
 class Player(AnimationSprite):
+    MOVE_SPEED = 10
+    WIDTH = 64
+    HEIGHT = 64
+    COLOR = "#FFFFFF"
+    JUMP_POWER = 13
+    GRAVITY = 0.65
+
     def __init__(self, x: int, y: int):
         super().__init__(images)
-
         self.image = self.get_normal_image()
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
-
+        self.onGround = False
         self.__speed = 5
 
     def update(self):
         self.process_animation()
-
         key = pygame.key.get_pressed()
         if key[pygame.K_SPACE]:
-            self.run_animation("falling")
+            self.run_animation("left")
 
     def compute(self, scores, map_group):
         x, y = self.rect.center
@@ -52,10 +56,26 @@ class Player(AnimationSprite):
         if can_move(virtual_player, map_group):
             self.rect.center = virtual_player.rect.center
 
+    def collide(self, xvel, yvel, platforms):
+        if platforms is None:
+            return
 
-        #speed сюда писать
+        for platform in platforms:
+            if sprite.collide_rect(self, platform):
+                if yvel > 0:
+                    self.rect.bottom = platform.rect.top
+                    self.onGround = True
+                    self.velocity.y = 0
+                    if isinstance(platform, MovingPlatform):
+                        self.velocity.x = platform.speed_x
+                        self.onMovingPlatform = True
+                if yvel < 0:
+                    self.rect.top = platform.rect.bottom
+                    self.velocity.y = 0
 
+                if xvel > 0:
+                    self.rect.right = platform.rect.left
+                if xvel < 0:
+                    self.rect.left = platform.rect.right
 
-
-
-
+        # speed сюда писать

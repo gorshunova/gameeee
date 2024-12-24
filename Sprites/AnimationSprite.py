@@ -12,7 +12,7 @@ class AnimationSprite(pygame.sprite.Sprite):
         self.load_images(images)
 
     def get_normal_image(self):
-        return self.__images['normal'][0][0]
+        return self.__images["normal"][0][0]
 
     def load_images(self, images):
         for key in images.keys():
@@ -27,8 +27,6 @@ class AnimationSprite(pygame.sprite.Sprite):
             self.__images.update({
                 key: (pygame_images, delay)
             })
-
-        self.image = self.__images["normal"][0][0]
 
     def run_animation(self, key: str):
         if key in self.__images:
@@ -48,7 +46,8 @@ class AnimationSprite(pygame.sprite.Sprite):
         if self.__ticks - self.__start_animation_tick >= len(animation_images) * delay:
             self.__current_animation = None
             self.__start_animation_tick = None
-            self.image = self.__images["normal"][0][0]
+            self.__last_index = None
+            self.image = self.get_normal_image()
             return
 
         index = (self.__ticks - self.__start_animation_tick) // delay
