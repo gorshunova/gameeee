@@ -15,8 +15,8 @@ def can_move(player, map_group):
 
 
 images = {
-    'right': (["assets/right.png"], 5),
-    'left': (["assets/left.png", "assets/left.png"], 5),
+    'right': (["assets/right.png"], 10),
+    'left': (["assets/left.png", "assets/left.png"], 10),
     "normal": (["assets/boy.png"], 0)
 }
 
@@ -66,9 +66,8 @@ class Player(AnimationSprite):
                     self.rect.bottom = platform.rect.top
                     self.onGround = True
                     self.velocity.y = 0
-                    if isinstance(platform, MovingPlatform):
+                    if isinstance(platform):
                         self.velocity.x = platform.speed_x
-                        self.onMovingPlatform = True
                 if yvel < 0:
                     self.rect.top = platform.rect.bottom
                     self.velocity.y = 0

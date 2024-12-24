@@ -2,6 +2,9 @@ import pygame
 import Sprites
 import random
 
+from Sprites import Player, Platform
+from Sprites.Ground import Ground
+
 WIDTH = 1000
 HEIGHT = 800
 
@@ -22,6 +25,11 @@ sprites.add(player)
 
 #scores_sprites.add(*scores)
 #sprites.add(*scores)
+platforms: list[Platform] = [Ground(sprites)]
+
+def spawn_platform():
+    platform = Platform.Platform(sprites, x=500, y=690)
+    platforms.append(platform)
 
 while running:
     clock.tick(FRAMERATE)
@@ -56,17 +64,11 @@ while running:
     sprites.update()
 
     screen.blit(background, (0, 0))
+    for platform in platforms:
+        screen.blit(platform.image, platform.rect.topleft)
+
     sprites.draw(screen)
     pygame.display.flip()
-
-platforms: list[Platform] = [
-    Ground(entities)
-]
-def spawn_platform():
-    cat_x, cat_y = cat.rect.center
-    platform = Platform(entities, x=0, y=0)
-
-    platforms.append(platform)
 
 
 pygame.quit()
