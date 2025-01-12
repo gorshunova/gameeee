@@ -15,15 +15,15 @@ def can_move(player, map_group):
 
 
 images = {
-    "right": (["assets/right.png", "assets/right.png"], 10),
-    "left": (["assets/left.png", "assets/left.png"], 10),
-    "normal": (["assets/boy.png"], 0)
+    "right": (["assets/girl_right.png", "assets/girl_right.png"], 10),
+    "left": (["assets/girl_left.png", "assets/girl_left.png"], 10),
+    "normal": (["assets/girl.png"], 0)
 }
 
 
 
 
-class Player(AnimationSprite):
+class Girl(AnimationSprite):
     MOVE_SPEED = 10
     WIDTH = 96
     HEIGHT = 96
@@ -44,20 +44,20 @@ class Player(AnimationSprite):
     def update(self, platforms):
         self.process_animation()
         key = pygame.key.get_pressed()
-        if key[pygame.K_LEFT]:
+        if key[pygame.K_a]:
             self.run_animation("left")
-            self.velocity.x = - Player.MOVE_SPEED
-        if key[pygame.K_RIGHT]:
+            self.velocity.x = - Girl.MOVE_SPEED
+        if key[pygame.K_d]:
             self.run_animation("right")
-            self.velocity.x = Player.MOVE_SPEED
-        if key[pygame.K_UP]:
-            self. velocity.y = - Player.JUMP_POWER
+            self.velocity.x = Girl.MOVE_SPEED
+        if key[pygame.K_w]:
+            self. velocity.y = - Girl.JUMP_POWER
             self.onGround = False
             self.onMovingPlatform = False
 
 
         if not self.onGround:
-            self.velocity.y += Player.GRAVITY
+            self.velocity.y += Girl.GRAVITY
             # if self.velocity.y > 0.65:
             #     self.state = 4
 
@@ -74,7 +74,7 @@ class Player(AnimationSprite):
         score_x, score_y = ai_logic.get_min_lenght_score(
             x, y, list(map(lambda x: x.rect.center, scores))
         )
-        virtual_player = Player(*self.rect.topleft)
+        virtual_player = Girl(*self.rect.topleft)
         virtual_player.rect.center = ai_logic.move(x, y, score_x, score_y, self.__speed)
         if can_move(virtual_player, map_group):
             self.rect.center = virtual_player.rect.center
@@ -97,5 +97,3 @@ class Player(AnimationSprite):
                     self.rect.right = platform.rect.left
                 if xvel < 0:
                     self.rect.left = platform.rect.right
-
-        # speed сюда писать

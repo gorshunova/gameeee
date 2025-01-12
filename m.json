@@ -1,20 +1,66 @@
 [
   {
-    "name": "player",
-    "x": 0,
-    "y": 0,
+    "name": "Player",
+    "x": 32,
+    "y": 32,
     "class": "Player"
   },
   {
+    "name": "Player2",
+    "x": 80,
+    "y": 32,
+    "class": "Girl"
+  },
+  {
+    "name": "Desk",
+    "x": 128,
+    "y": 32,
+    "class": "Desk"
+  },
+  {
+    "name": "LongDesk",
+    "x": 320,
+    "y": 32,
+    "class": "LongDesk"
+  },
+  {
+    "name": "Shelf",
+    "x": 600,
+    "y": 256,
+    "class": "Shelf"
+  },
+  {
+    "name": "Door",
+    "x": 636,
+    "y": 256,
+    "class": "Door"
+  }
+],
+[{
     "name": "",
     "x": 0,
     "y": 0,
     "class": ""
-  },
-  {
+  }{
+    "name": "",
+    "x": 0,
+    "y": 0,
+    "class": ""
+  }{
+    "name": "",
+    "x": 0,
+    "y": 0,
+    "class": ""
+  }{
+    "name": "",
+    "x": 0,
+    "y": 0,
+    "class": ""
+  }{
     "name": "",
     "x": 0,
     "y": 0,
     "class": ""
   }
 ]
+

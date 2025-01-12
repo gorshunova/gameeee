@@ -2,11 +2,12 @@ import pygame
 import Sprites
 import random
 
-from Sprites import Player, Platform
+from Sprites import Player, Platform, Player2
+from Sprites.Player2 import Girl
 from Sprites.Ground import Ground
 
-WIDTH = 1000
-HEIGHT = 800
+WIDTH = 1200
+HEIGHT = 700
 
 
 
@@ -22,8 +23,12 @@ background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 sprites = pygame.sprite.Group()
 scores_sprites = pygame.sprite.Group()
 
-player = Sprites.Player(400, 518)
+player = Sprites.Player(32, 518)
 sprites.add(player)
+
+player_2 = Sprites.Player2.Girl(80,518)
+sprites.add(player_2)
+
 
 #scores_sprites.add(*scores)
 #sprites.add(*scores)
@@ -68,7 +73,7 @@ while running:
     sprites.update(platforms=platforms)
 
     # screen.blit(background, (0, 0))
-    screen.fill((0, 0, 0))
+    screen.fill((232, 228, 190))
     for platform in platforms:
         screen.blit(platform.image, platform.rect.topleft)
 
