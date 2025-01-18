@@ -3,6 +3,7 @@ from pygame import sprite
 
 import ai_logic
 from Sprites.AnimationSprite import AnimationSprite
+from Sprites.Platform import Platform
 
 
 def can_move(player, map_group):
@@ -84,18 +85,19 @@ class Player(AnimationSprite):
             return
 
         for platform in platforms:
-            if sprite.collide_rect(self, platform):
-                if yvel > 0:
-                    self.rect.bottom = platform.rect.top
-                    self.onGround = True
-                    self.velocity.y = 0
-                if yvel < 0:
-                    self.rect.top = platform.rect.bottom
-                    self.velocity.y = 0
+            if isinstance(platform, Platform):
+                if sprite.collide_rect(self, platform):
+                    if yvel > 0:
+                        self.rect.bottom = platform.rect.top
+                        self.onGround = True
+                        self.velocity.y = 0
+                    if yvel < 0:
+                        self.rect.top = platform.rect.bottom
+                        self.velocity.y = 0
 
-                if xvel > 0:
-                    self.rect.right = platform.rect.left
-                if xvel < 0:
-                    self.rect.left = platform.rect.right
+                    if xvel > 0:
+                        self.rect.right = platform.rect.left
+                    if xvel < 0:
+                        self.rect.left = platform.rect.right
 
         # speed сюда писать

@@ -3,6 +3,7 @@ from pygame import sprite
 
 import ai_logic
 from Sprites.AnimationSprite import AnimationSprite
+from Sprites.Platform import Platform
 
 
 def can_move(player, map_group):
@@ -23,7 +24,7 @@ images = {
 
 
 
-class Girl(AnimationSprite):
+class Player2(AnimationSprite):
     MOVE_SPEED = 10
     WIDTH = 96
     HEIGHT = 96
@@ -46,18 +47,18 @@ class Girl(AnimationSprite):
         key = pygame.key.get_pressed()
         if key[pygame.K_a]:
             self.run_animation("left")
-            self.velocity.x = - Girl.MOVE_SPEED
+            self.velocity.x = - Player2.MOVE_SPEED
         if key[pygame.K_d]:
             self.run_animation("right")
-            self.velocity.x = Girl.MOVE_SPEED
+            self.velocity.x = Player2.MOVE_SPEED
         if key[pygame.K_w]:
-            self. velocity.y = - Girl.JUMP_POWER
+            self. velocity.y = - Player2.JUMP_POWER
             self.onGround = False
             self.onMovingPlatform = False
 
 
         if not self.onGround:
-            self.velocity.y += Girl.GRAVITY
+            self.velocity.y += Player2.GRAVITY
             # if self.velocity.y > 0.65:
             #     self.state = 4
 
@@ -74,7 +75,7 @@ class Girl(AnimationSprite):
         score_x, score_y = ai_logic.get_min_lenght_score(
             x, y, list(map(lambda x: x.rect.center, scores))
         )
-        virtual_player = Girl(*self.rect.topleft)
+        virtual_player = Player2(*self.rect.topleft)
         virtual_player.rect.center = ai_logic.move(x, y, score_x, score_y, self.__speed)
         if can_move(virtual_player, map_group):
             self.rect.center = virtual_player.rect.center
@@ -84,16 +85,17 @@ class Girl(AnimationSprite):
             return
 
         for platform in platforms:
-            if sprite.collide_rect(self, platform):
-                if yvel > 0:
-                    self.rect.bottom = platform.rect.top
-                    self.onGround = True
-                    self.velocity.y = 0
-                if yvel < 0:
-                    self.rect.top = platform.rect.bottom
-                    self.velocity.y = 0
+            if isinstance(platform, Platform):
+                if sprite.collide_rect(self, platform):
+                    if yvel > 0:
+                        self.rect.bottom = platform.rect.top
+                        self.onGround = True
+                        self.velocity.y = 0
+                    if yvel < 0:
+                        self.rect.top = platform.rect.bottom
+                        self.velocity.y = 0
 
-                if xvel > 0:
-                    self.rect.right = platform.rect.left
-                if xvel < 0:
-                    self.rect.left = platform.rect.right
+                    if xvel > 0:
+                        self.rect.right = platform.rect.left
+                    if xvel < 0:
+                        self.rect.left = platform.rect.right

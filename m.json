@@ -1,66 +1,141 @@
 [
-  {
-    "name": "Player",
-    "x": 32,
-    "y": 32,
-    "class": "Player"
-  },
-  {
-    "name": "Player2",
-    "x": 80,
-    "y": 32,
-    "class": "Girl"
-  },
-  {
-    "name": "Desk",
-    "x": 128,
-    "y": 32,
-    "class": "Desk"
-  },
-  {
-    "name": "LongDesk",
-    "x": 320,
-    "y": 32,
-    "class": "LongDesk"
-  },
-  {
-    "name": "Shelf",
-    "x": 600,
-    "y": 256,
-    "class": "Shelf"
-  },
-  {
-    "name": "Door",
-    "x": 636,
-    "y": 256,
-    "class": "Door"
-  }
-],
-[{
-    "name": "",
-    "x": 0,
-    "y": 0,
-    "class": ""
-  }{
-    "name": "",
-    "x": 0,
-    "y": 0,
-    "class": ""
-  }{
-    "name": "",
-    "x": 0,
-    "y": 0,
-    "class": ""
-  }{
-    "name": "",
-    "x": 0,
-    "y": 0,
-    "class": ""
-  }{
-    "name": "",
-    "x": 0,
-    "y": 0,
-    "class": ""
-  }
+  [
+    {
+      "name": "Player",
+      "x": 32,
+      "y": 32,
+      "class": "Player"
+    },
+    {
+      "name": "Player2",
+      "x": 32,
+      "y": 32,
+      "class": "Girl"
+    },
+    {
+      "name": "Desk",
+      "x": 128,
+      "y": 32,
+      "class": "Desk"
+    },
+    {
+      "name": "LongDesk",
+      "x": 320,
+      "y": 32,
+      "class": "LongDesk"
+    },
+    {
+      "name": "Shelf",
+      "x": 600,
+      "y": 256,
+      "class": "Shelf"
+    },
+    {
+      "name": "Door",
+      "x": 636,
+      "y": 256,
+      "class": "Door"
+    }
+  ],
+  [
+    {
+      "name": "Player",
+      "x": 32,
+      "y": 32,
+      "class": "Player"
+    },
+    {
+      "name": "Player2",
+      "x": 80,
+      "y": 32,
+      "class": "Girl"
+    },
+    {
+      "name": "Window",
+      "x": 600,
+      "y": 350,
+      "class": "Window"
+    },
+    {
+      "name": "LongDesk",
+      "x": 152,
+      "y": 32,
+      "class": "LongDesk"
+    },
+    {
+      "name": "Desk",
+      "x": 296,
+      "y": 128,
+      "class": "Desk"
+    },
+    {
+      "name": "Shelf",
+      "x": 488,
+      "y": 256,
+      "class": "Shelf"
+    },
+    {
+      "name": "Shelf",
+      "x": 600,
+      "y": 200,
+      "class": "Shelf"
+    },
+    {
+      "name": "Door",
+      "x": 650,
+      "y": 200,
+      "class": "Door"
+    }
+  ],
+  [
+    {
+      "name": "Player",
+      "x": 400,
+      "y": 32,
+      "class": "Player"
+    },
+    {
+      "name": "Player2",
+      "x": 300,
+      "y": 32,
+      "class": "Girl"
+    },
+    {
+      "name": "Desk",
+      "x": 200,
+      "y": 32,
+      "class": "Desk"
+    },
+    {
+      "name": "Desk",
+      "x": 500,
+      "y": 32,
+      "class": "Desk"
+    },
+    {
+      "name": "LongDesk",
+      "x": 96,
+      "y": 128,
+      "class": "LongDesk"
+    },
+    {
+      "name": "LongDesk",
+      "x": 604,
+      "y": 128,
+      "class": "LongDesk"
+    },
+    {
+      "name": "Shuffle",
+      "x": 350,
+      "y": 384,
+      "class": "Shuffle"
+    },
+    {
+      "name": "Door",
+      "x": 350,
+      "y": 384,
+      "class": "Door"
+    }
+  ]
 ]
 

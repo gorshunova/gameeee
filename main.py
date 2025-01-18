@@ -3,8 +3,9 @@ import Sprites
 import random
 
 from Sprites import Player, Platform, Player2
-from Sprites.Player2 import Girl
+from Sprites.Player2 import Player2
 from Sprites.Ground import Ground
+from TestJson import parse_json
 
 WIDTH = 1200
 HEIGHT = 700
@@ -20,23 +21,21 @@ FRAMERATE = 60
 background = pygame.image.load("./assets/background.png")
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
-sprites = pygame.sprite.Group()
+levels = list(parse_json())
+
+sprites = levels[0]
 scores_sprites = pygame.sprite.Group()
 
-player = Sprites.Player(32, 518)
-sprites.add(player)
-
-player_2 = Sprites.Player2.Girl(80,518)
-sprites.add(player_2)
+# player = Sprites.Player(32, 518)
+# sprites.add(player)
+#
+# player_2 = Sprites.Player2.Player2(80, 518)
+# sprites.add(player_2)
 
 
 #scores_sprites.add(*scores)
 #sprites.add(*scores)
 platforms: list[Platform] = [Ground(sprites, h=HEIGHT-32)]
-
-def spawn_platform():
-    platform = Platform.Platform(sprites, x=500, y=690)
-    platforms.append(platform)
 
 while running:
     clock.tick(FRAMERATE)
@@ -70,12 +69,12 @@ while running:
                 case pygame.K_LSHIFT:
                     shift = False
 
-    sprites.update(platforms=platforms)
+    sprites.update(platforms=sprites)
 
     # screen.blit(background, (0, 0))
     screen.fill((232, 228, 190))
-    for platform in platforms:
-        screen.blit(platform.image, platform.rect.topleft)
+    # for platform in platforms:
+    #     screen.blit(platform.image, platform.rect.topleft)
 
     sprites.draw(screen)
     pygame.display.flip()
