@@ -8,7 +8,7 @@ class Door(Platform):
         super().__init__(*groups, x=l, y=h, width=192)
         width = 32
         height = 64
-        self.image = image.load('assets/opened_door.png')
+        self.image = image.load('assets/door.png')
         self.image = transform.scale(self.image, (width, height))
 
 # + открытая дверь !!!!!!!!!!!!!!!!!!!!!!!!!!!!

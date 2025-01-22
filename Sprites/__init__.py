@@ -7,4 +7,5 @@ from .LongDesk import LongDesk
 from .Door import Door
 from .Shelf import Shelf
 from .Bookcase import Bookcase
-
+from .ScoresGirl import ScoresGirl
+from .ScoresBoy import ScoresBoy

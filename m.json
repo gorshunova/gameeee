@@ -3,37 +3,37 @@
     {
       "name": "Player",
       "x": 32,
-      "y": 32,
+      "y": 668,
       "class": "Player"
     },
     {
       "name": "Player2",
       "x": 32,
-      "y": 32,
+      "y": 668,
       "class": "Girl"
     },
     {
       "name": "Desk",
       "x": 128,
-      "y": 32,
+      "y": 668,
       "class": "Desk"
     },
     {
       "name": "LongDesk",
       "x": 320,
-      "y": 32,
+      "y": 444,
       "class": "LongDesk"
     },
     {
       "name": "Shelf",
       "x": 600,
-      "y": 256,
+      "y": 444,
       "class": "Shelf"
     },
     {
       "name": "Door",
       "x": 636,
-      "y": 256,
+      "y": 444,
       "class": "Door"
     }
   ],
@@ -41,13 +41,13 @@
     {
       "name": "Player",
       "x": 32,
-      "y": 32,
+      "y": 668,
       "class": "Player"
     },
     {
       "name": "Player2",
       "x": 80,
-      "y": 32,
+      "y": 668,
       "class": "Girl"
     },
     {
@@ -59,31 +59,31 @@
     {
       "name": "LongDesk",
       "x": 152,
-      "y": 32,
+      "y": 668,
       "class": "LongDesk"
     },
     {
       "name": "Desk",
       "x": 296,
-      "y": 128,
+      "y": 572,
       "class": "Desk"
     },
     {
       "name": "Shelf",
       "x": 488,
-      "y": 256,
+      "y": 444,
       "class": "Shelf"
     },
     {
       "name": "Shelf",
       "x": 600,
-      "y": 200,
+      "y": 500,
       "class": "Shelf"
     },
     {
       "name": "Door",
       "x": 650,
-      "y": 200,
+      "y": 500,
       "class": "Door"
     }
   ],
@@ -91,49 +91,49 @@
     {
       "name": "Player",
       "x": 400,
-      "y": 32,
+      "y": 668,
       "class": "Player"
     },
     {
       "name": "Player2",
       "x": 300,
-      "y": 32,
+      "y": 668,
       "class": "Girl"
     },
     {
       "name": "Desk",
       "x": 200,
-      "y": 32,
+      "y": 668,
       "class": "Desk"
     },
     {
       "name": "Desk",
       "x": 500,
-      "y": 32,
+      "y": 668,
       "class": "Desk"
     },
     {
       "name": "LongDesk",
       "x": 96,
-      "y": 128,
+      "y": 572,
       "class": "LongDesk"
     },
     {
       "name": "LongDesk",
       "x": 604,
-      "y": 128,
+      "y": 572,
       "class": "LongDesk"
     },
     {
       "name": "Shuffle",
       "x": 350,
-      "y": 384,
+      "y": 316,
       "class": "Shuffle"
     },
     {
       "name": "Door",
       "x": 350,
-      "y": 384,
+      "y": 316,
       "class": "Door"
     }
   ]

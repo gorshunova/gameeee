@@ -45,6 +45,13 @@ def parse_json():
                 elif cls == 'Scores':
                     sprite = Scores(level, x, y)
                     level.add(sprite)
+                elif cls == 'ScoresGirl':
+                    sprite = ScoresGirl(level, x, y)
+                    level.add(sprite)
+                elif cls == 'ScoresBoy':
+                    sprite = ScoresBoy(level, x, y)
+                    level.add(sprite)
+
         yield level
 
 
