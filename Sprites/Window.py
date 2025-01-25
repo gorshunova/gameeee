@@ -10,3 +10,4 @@ class Window(Platform):
         height = 192
         self.image = image.load('assets/window.png')
         self.image = transform.scale(self.image, (width, height))
+        self.update_rect()

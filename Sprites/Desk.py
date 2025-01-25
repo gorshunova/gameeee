@@ -9,3 +9,4 @@ class Desk(Platform):
         height = 96
         self.image = image.load('assets/desk.png')
         self.image = transform.scale(self.image, (width, height))
+        self.update_rect()

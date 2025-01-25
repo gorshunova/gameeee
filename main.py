@@ -1,6 +1,6 @@
 import pygame
 import Sprites
-import random
+
 
 from Sprites import Player, Platform, Player2
 from Sprites.Player2 import Player2
@@ -54,8 +54,10 @@ while running:
                     space = True
                 case pygame.K_LSHIFT:
                     shift = True
+
             if event.key == pygame.K_ESCAPE:
                 running = False
+
         elif event.type == pygame.KEYUP:
             match event.key:
                 case pygame.K_SPACE:

@@ -11,3 +11,9 @@ class Platform(sprite.Sprite):
 
         self.image = image.load('assets/platform.png')
         self.rect = Rect(x, y, width, height)
+
+    def update_rect(self):
+        topleft = self.rect.topleft
+        self.rect = self.image.get_rect()
+        self.rect.topleft = topleft
+

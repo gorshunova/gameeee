@@ -8,35 +8,48 @@
     },
     {
       "name": "Player2",
-      "x": 32,
+      "x": 1000,
       "y": 668,
-      "class": "Girl"
+      "class": "Player2"
     },
     {
-      "name": "Desk",
-      "x": 128,
+      "name": "Desk1",
+      "x": 900,
       "y": 668,
       "class": "Desk"
     },
     {
-      "name": "LongDesk",
+      "name": "Desk2",
+      "x": 1000,
+      "y": 668,
+      "class": "Desk"
+    },
+    {
+      "name": "LongDesk1",
       "x": 320,
       "y": 444,
       "class": "LongDesk"
     },
     {
+      "name": "LongDesk2",
+      "x": 1000,
+      "y": 444,
+      "class": "LongDesk"
+    },
+    {
       "name": "Shelf",
-      "x": 600,
+      "x": 792,
       "y": 444,
       "class": "Shelf"
     },
     {
       "name": "Door",
-      "x": 636,
-      "y": 444,
+      "x": 900,
+      "y": 188,
       "class": "Door"
     }
   ],
+
   [
     {
       "name": "Player",
@@ -48,7 +61,7 @@
       "name": "Player2",
       "x": 80,
       "y": 668,
-      "class": "Girl"
+      "class": "Player2"
     },
     {
       "name": "Window",
@@ -87,6 +100,7 @@
       "class": "Door"
     }
   ],
+
   [
     {
       "name": "Player",
@@ -98,7 +112,7 @@
       "name": "Player2",
       "x": 300,
       "y": 668,
-      "class": "Girl"
+      "class": "Player2"
     },
     {
       "name": "Desk",
@@ -125,10 +139,10 @@
       "class": "LongDesk"
     },
     {
-      "name": "Shuffle",
+      "name": "Shelf",
       "x": 350,
       "y": 316,
-      "class": "Shuffle"
+      "class": "Shelf"
     },
     {
       "name": "Door",

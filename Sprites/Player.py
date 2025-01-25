@@ -95,9 +95,6 @@ class Player(AnimationSprite):
                         self.rect.top = platform.rect.bottom
                         self.velocity.y = 0
 
-                    if xvel > 0:
-                        self.rect.right = platform.rect.left
-                    if xvel < 0:
-                        self.rect.left = platform.rect.right
+
 
         # speed сюда писать

@@ -10,3 +10,4 @@ class LongDesk(Platform):
         height = 96
         self.image = image.load('assets/long_desk.png')
         self.image = transform.scale(self.image, (width, height))
+        self.update_rect()
