@@ -7,6 +7,3 @@ class ScoresGirl(pygame.sprite.Sprite):
         self.image = pygame.image.load('assets/score_girl.png')
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
-
-    def update(self):
-        ...

@@ -51,7 +51,7 @@ class Player2(AnimationSprite):
         if key[pygame.K_d]:
             self.run_animation("right")
             self.velocity.x = Player2.MOVE_SPEED
-        if key[pygame.K_w]:
+        if key[pygame.K_w] and self.onGround:
             self. velocity.y = - Player2.JUMP_POWER
             self.onGround = False
             self.onMovingPlatform = False
@@ -63,19 +63,22 @@ class Player2(AnimationSprite):
             #     self.state = 4
 
         self.onGround = False
-        self.rect.x += self.velocity.x
         self.rect.y += self.velocity.y
 
         self.collide(0, self.velocity.y, platforms)
-        self.velocity.x = 0
 
+        if 0 < self.rect.x + self.velocity.x < 5000:
+            self.rect.x += self.velocity.x
+            self.collide(self.velocity.x, 0, platforms)
+
+        self.velocity.x = 0
 
     def compute(self, scores, map_group):
         x, y = self.rect.center
         score_x, score_y = ai_logic.get_min_lenght_score(
             x, y, list(map(lambda x: x.rect.center, scores))
         )
-        virtual_player = Player2(*self.rect.topleft)
+        virtual_player = Player(*self.rect.topleft)
         virtual_player.rect.center = ai_logic.move(x, y, score_x, score_y, self.__speed)
         if can_move(virtual_player, map_group):
             self.rect.center = virtual_player.rect.center
@@ -94,7 +97,6 @@ class Player2(AnimationSprite):
                     if yvel < 0:
                         self.rect.top = platform.rect.bottom
                         self.velocity.y = 0
-
                     if xvel > 0:
                         self.rect.right = platform.rect.left
                     if xvel < 0:

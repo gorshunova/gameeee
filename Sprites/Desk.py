@@ -1,3 +1,4 @@
+import pygame
 from pygame import sprite, image, transform
 
 from Sprites.Platform import Platform

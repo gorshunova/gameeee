@@ -2,7 +2,7 @@ import pygame
 import Sprites
 
 
-from Sprites import Player, Platform, Player2
+from Sprites import Player, Platform, Player2, Door
 from Sprites.Player2 import Player2
 from Sprites.Ground import Ground
 from TestJson import parse_json
@@ -21,10 +21,12 @@ FRAMERATE = 60
 background = pygame.image.load("./assets/background.png")
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
-levels = list(parse_json())
+levels = list(parse_json())[::-1]
 
 sprites = levels[0]
 scores_sprites = pygame.sprite.Group()
+door = [sprite for sprite in sprites if isinstance(sprite, Door)][0]
+
 
 # player = Sprites.Player(32, 518)
 # sprites.add(player)
@@ -72,6 +74,7 @@ while running:
                     shift = False
 
     sprites.update(platforms=sprites)
+    active = door.active1 and door.active1
 
     # screen.blit(background, (0, 0))
     screen.fill((232, 228, 190))

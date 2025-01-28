@@ -8,57 +8,6 @@
     },
     {
       "name": "Player2",
-      "x": 1000,
-      "y": 668,
-      "class": "Player2"
-    },
-    {
-      "name": "Desk1",
-      "x": 900,
-      "y": 668,
-      "class": "Desk"
-    },
-    {
-      "name": "Desk2",
-      "x": 1000,
-      "y": 668,
-      "class": "Desk"
-    },
-    {
-      "name": "LongDesk1",
-      "x": 320,
-      "y": 444,
-      "class": "LongDesk"
-    },
-    {
-      "name": "LongDesk2",
-      "x": 1000,
-      "y": 444,
-      "class": "LongDesk"
-    },
-    {
-      "name": "Shelf",
-      "x": 792,
-      "y": 444,
-      "class": "Shelf"
-    },
-    {
-      "name": "Door",
-      "x": 900,
-      "y": 188,
-      "class": "Door"
-    }
-  ],
-
-  [
-    {
-      "name": "Player",
-      "x": 32,
-      "y": 668,
-      "class": "Player"
-    },
-    {
-      "name": "Player2",
       "x": 80,
       "y": 668,
       "class": "Player2"
@@ -117,13 +66,13 @@
     {
       "name": "Desk",
       "x": 200,
-      "y": 668,
+      "y": 80,
       "class": "Desk"
     },
     {
       "name": "Desk",
       "x": 500,
-      "y": 668,
+      "y": 80,
       "class": "Desk"
     },
     {
@@ -149,6 +98,62 @@
       "x": 350,
       "y": 316,
       "class": "Door"
+    }
+  ],
+  [
+    {
+      "name": "Player",
+      "x": 90,
+      "y": 668,
+      "class": "Player"
+    },
+    {
+      "name": "Player2",
+      "x": 48,
+      "y": 668,
+      "class": "Player2"
+    },
+    {
+      "name": "Desk1",
+      "x": 420,
+      "y": 476,
+      "class": "Desk"
+    },
+    {
+      "name": "Desk2",
+      "x": 530,
+      "y": 476,
+      "class": "Desk"
+    },
+    {
+      "name": "LongDesk1",
+      "x": 150,
+      "y": 572,
+      "class": "LongDesk"
+    },
+    {
+      "name": "LongDesk2",
+      "x": 356,
+      "y": 572,
+      "class": "LongDesk"
+    },
+    {
+      "name": "Shelf",
+      "x": 792,
+      "y": 400,
+      "class": "Shelf"
+    },
+    {
+      "name": "Door",
+      "x": 900,
+      "y": 143,
+      "class": "Door"
+    },
+    {
+      "name": "Desk3",
+      "x": 555,
+      "y": 572,
+      "class": "Desk"
     }
   ]
 ]

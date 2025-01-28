@@ -12,5 +12,10 @@ class Door(Platform):
         self.image = transform.scale(self.image, (width, height))
         self.update_rect()
 
+        self.active1 = False
+
+    def update(self, *args, **kwargs):
+        ...
+
 # + открытая дверь !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

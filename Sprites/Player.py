@@ -2,6 +2,7 @@ import pygame
 from pygame import sprite
 
 import ai_logic
+from Sprites import Door
 from Sprites.AnimationSprite import AnimationSprite
 from Sprites.Platform import Platform
 
@@ -20,8 +21,6 @@ images = {
     "left": (["assets/left.png", "assets/left.png"], 10),
     "normal": (["assets/boy.png"], 0)
 }
-
-
 
 
 class Player(AnimationSprite):
@@ -51,11 +50,10 @@ class Player(AnimationSprite):
         if key[pygame.K_RIGHT]:
             self.run_animation("right")
             self.velocity.x = Player.MOVE_SPEED
-        if key[pygame.K_UP]:
-            self. velocity.y = - Player.JUMP_POWER
+        if key[pygame.K_UP] and self.onGround:
+            self.velocity.y = - Player.JUMP_POWER
             self.onGround = False
             self.onMovingPlatform = False
-
 
         if not self.onGround:
             self.velocity.y += Player.GRAVITY
@@ -63,12 +61,15 @@ class Player(AnimationSprite):
             #     self.state = 4
 
         self.onGround = False
-        self.rect.x += self.velocity.x
         self.rect.y += self.velocity.y
 
         self.collide(0, self.velocity.y, platforms)
-        self.velocity.x = 0
 
+        if 0 < self.rect.x + self.velocity.x < 5000:
+            self.rect.x += self.velocity.x
+            self.collide(self.velocity.x, 0, platforms)
+
+        self.velocity.x = 0
 
     def compute(self, scores, map_group):
         x, y = self.rect.center
@@ -86,6 +87,9 @@ class Player(AnimationSprite):
 
         for platform in platforms:
             if isinstance(platform, Platform):
+                if isinstance(platform, Door):
+                    platform.active1 = True
+                    continue
                 if sprite.collide_rect(self, platform):
                     if yvel > 0:
                         self.rect.bottom = platform.rect.top
@@ -94,7 +98,9 @@ class Player(AnimationSprite):
                     if yvel < 0:
                         self.rect.top = platform.rect.bottom
                         self.velocity.y = 0
-
-
+                    if xvel > 0:
+                        self.rect.right = platform.rect.left
+                    if xvel < 0:
+                        self.rect.left = platform.rect.right
 
         # speed сюда писать
